@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Comparator;
 
 /**
+ * Home Controller for Spring MVC application.
+ * Serves two mappings: "/" and "/compare".
  * Created by piet.vermeersch on 18/02/2016.
  */
 @Controller
@@ -31,6 +33,7 @@ public class HomeController {
         String comparison = (result < 0) ? "less than" : (result > 0 ? "greater than" : "equal to");
         String output = "According to our Comparator, '" + input1 + "' is " + comparison + " '" + input2 + "'";
         model.addAttribute("output", output);
+        System.out.println("Returning with output: " + output);
         return "compareResult";
     }
 }
