@@ -26,7 +26,7 @@ public class HomeController {
 
     @RequestMapping(value = "/compare", method = RequestMethod.GET)
     public String compare(@RequestParam("input1") String input1, @RequestParam("input2") String input2, Model model) {
-        System.out.println("HomeController:compare:");
+        System.out.println("HomeController:compare:" + input1 + ", " + input2);
         int result = comparator.compare(input1, input2);
         String comparison = (result < 0) ? "less than" : (result > 0 ? "greater than" : "equal to");
         String output = "According to our Comparator, '" + input1 + "' is " + comparison + " '" + input2 + "'";
