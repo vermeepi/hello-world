@@ -11,6 +11,7 @@ import java.util.Comparator;
 public class CaseInsensitiveComparator implements Comparator<String> {
     @Override
     public int compare(String o1, String o2) {
+        System.out.println("compare: ");
         assert o1 != null && o2 != null;
         return String.CASE_INSENSITIVE_ORDER.compare(o1, o2);
     }
